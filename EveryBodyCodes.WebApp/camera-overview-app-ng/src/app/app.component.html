@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Infi | Security cameras Utrecht</title>
+  <!-- Video camera Icon by Martz90 available at http://www.iconarchive.com/show/circle-icons-by-martz90/video-camera-icon.html under a Creative Commons Attribution-Noncommercial-No Derivate 4.0. Full terms at http://creativecommons.org/licenses/by-nc-nd/4.0 -->
+  <link rel="icon" type="image/x-icon" href="..\assets\video-camera-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <link rel="stylesheet" href="app.component.css">
+</head>
+
+<body>
+  <h1>Security cameras Utrecht</h1>
+  <div id="mapid"></div>
+  <div id="source">
+    source:
+    <a href="https://data.overheid.nl/data/dataset/camera-s">https://data.overheid.nl/data/dataset/camera-s</a>
+  </div>
+  <main>
+    <table id="cameraTableContainer">
+      <tbody>
+        <tr>
+          <td>
+            <table id="column3">
+              <thead>
+                <tr>
+                  <th colspan="4">Cameras 3</th>
+                </tr>
+                <tr>
+                  <th>Number</th>
+                  <th>Name</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                </tr>
+              </thead>
+              <tr *ngFor="let camera of camerasThreeOverview">
+                <td>{{camera.number}}</td>
+                <td>{{camera.camera}}</td>
+                <td>{{camera.latitude}}</td>
+                <td>{{camera.longitude}}</td>
+              </tr>
+              <tbody>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table id="column5">
+              <thead>
+                <tr>
+                  <th colspan="4">Cameras 5</th>
+                </tr>
+                <tr>
+                  <th>Number</th>
+                  <th>Name</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let camera of camerasFiveOverview">
+                  <td>{{camera.number}}</td>
+                  <td>{{camera.camera}}</td>
+                  <td>{{camera.latitude}}</td>
+                  <td>{{camera.longitude}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table id="column15">
+              <thead>
+                <tr>
+                  <th colspan="4">Cameras 3 &amp; 5</th>
+                </tr>
+                <tr>
+                  <th>Number</th>
+                  <th>Name</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let camera of camerasThreeAndFiveOverview">
+                  <td>{{camera.number}}</td>
+                  <td>{{camera.camera}}</td>
+                  <td>{{camera.latitude}}</td>
+                  <td>{{camera.longitude}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table id="columnOther">
+              <thead>
+                <tr>
+                  <th colspan="4">Cameras Overig</th>
+                </tr>
+                <tr>
+                  <th>Number</th>
+                  <th>Name</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let camera of camerasNoneOverview">
+                  <td>{{camera.number}}</td>
+                  <td>{{camera.camera}}</td>
+                  <td>{{camera.latitude}}</td>
+                  <td>{{camera.longitude}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+
+</html>
